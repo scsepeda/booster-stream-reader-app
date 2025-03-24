@@ -28,7 +28,7 @@ public record StreamStatisticsResponseDto
     /// <summary>
     /// Gets or sets the dictionary of the 10 most frequently appearing words in the stream.
     /// </summary>
-    public Dictionary<string, int> WordFrequency { get; set; } = new();
+    public Dictionary<string, int> MostFrequentWords { get; set; } = new();
 
     /// <summary>
     /// Gets or sets the dictionary of all characters appearing in the stream and their frequencies.
