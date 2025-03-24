@@ -19,7 +19,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Booster.StreamReader.API": {
+    "Booster.StreamReader": {
         "commandName": "Project",
         "dotnetRunMessages": true,
         "launchBrowser": false,

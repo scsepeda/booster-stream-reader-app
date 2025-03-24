@@ -1,5 +1,4 @@
 ﻿using System.Text;
-using Booster.CodingTest.Library;
 using Booster.StreamReader.API.Core.Services;
 using Booster.StreamReader.API.Features.StreamStatistics.DTO;
 
@@ -15,7 +14,7 @@ namespace Booster.StreamReader.API.Features.StreamStatistics.Services.Concretes
             {
                 //var memoryStream = new MemoryStream(new WordStream());
 
-                using var stream = new System.IO.StreamReader(new WordStream());
+                using var stream = new System.IO.StreamReader(GenerateStreamFromString(inputString));
                 string? line;
                 while ((line = stream.ReadLine()) != null)
                 {
