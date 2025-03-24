@@ -1,9 +1,5 @@
-using System;
-using System.Net;
-using Booster.StreamReader.API.Core.Services;
-using Booster.StreamReader.API.Infrastructure.Extensions;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
+using Booster.StreamReader.Core.Services;
+using Booster.StreamReader.Infrastructure.Extensions;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);

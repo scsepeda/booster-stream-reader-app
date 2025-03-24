@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics.Contracts;
 using System.Net;
 
-namespace Booster.StreamReader.API.Core.Wrappers
+namespace Booster.StreamReader.Core.Wrappers
 {
     public class Result
     {

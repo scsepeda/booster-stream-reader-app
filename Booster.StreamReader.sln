@@ -5,6 +5,8 @@ VisualStudioVersion = 17.13.35913.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booster.StreamReader", "src\Booster.StreamReader\Booster.StreamReader.csproj", "{24D748C4-A488-47E8-AAC3-3669C2F90C44}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booster.StreamReader.Test", "test\Booster.StreamReader.Test\Booster.StreamReader.Test.csproj", "{5410E294-EB49-C244-5086-628C96FC3226}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{24D748C4-A488-47E8-AAC3-3669C2F90C44}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24D748C4-A488-47E8-AAC3-3669C2F90C44}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24D748C4-A488-47E8-AAC3-3669C2F90C44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5410E294-EB49-C244-5086-628C96FC3226}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5410E294-EB49-C244-5086-628C96FC3226}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5410E294-EB49-C244-5086-628C96FC3226}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5410E294-EB49-C244-5086-628C96FC3226}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,6 +1,6 @@
-﻿using Booster.StreamReader.API.Features.StreamStatistics.DTO;
+﻿using Booster.StreamReader.Features.StreamStatistics.DTO;
 
-namespace Booster.StreamReader.API.Features.StreamStatistics.Services
+namespace Booster.StreamReader.Features.StreamStatistics.Services
 {
     /// <summary>
     /// Interface for processing streams to gather statistics.

@@ -1,8 +1,8 @@
 ﻿using System.Text;
-using Booster.StreamReader.API.Core.Services;
-using Booster.StreamReader.API.Features.StreamStatistics.DTO;
+using Booster.StreamReader.Core.Services;
+using Booster.StreamReader.Features.StreamStatistics.DTO;
 
-namespace Booster.StreamReader.API.Features.StreamStatistics.Services.Concretes
+namespace Booster.StreamReader.Features.StreamStatistics.Services.Concretes
 {
     public class StreamProcessingService(ILogger<BoosterStreamReaderService> logger) : IStreamProcessingService
     {
@@ -23,7 +23,7 @@ namespace Booster.StreamReader.API.Features.StreamStatistics.Services.Concretes
                 // Sort and get distinct values
                 statistics.LargestWords = [.. statistics.LargestWords.Distinct().OrderByDescending(w => w.Length).Take(5)];
                 statistics.SmallestWords = [.. statistics.SmallestWords.Distinct().OrderBy(w => w.Length).Take(5)];
-                statistics.WordFrequency = statistics.WordFrequency.OrderByDescending(w => w.Value).Take(10).ToDictionary(w => w.Key, w => w.Value);
+                statistics.MostFrequentWords = statistics.MostFrequentWords.OrderByDescending(w => w.Value).Take(10).ToDictionary(w => w.Key, w => w.Value);
                 statistics.CharacterFrequency = statistics.CharacterFrequency.OrderByDescending(c => c.Value).ToDictionary(c => c.Key, c => c.Value);
 
                 return statistics;
@@ -102,13 +102,13 @@ namespace Booster.StreamReader.API.Features.StreamStatistics.Services.Concretes
             }
 
             // Update word frequency
-            if (statistics.WordFrequency.TryGetValue(word, out int value))
+            if (statistics.MostFrequentWords.TryGetValue(word, out int value))
             {
-                statistics.WordFrequency[word] = ++value;
+                statistics.MostFrequentWords[word] = ++value;
             }
             else
             {
-                statistics.WordFrequency[word] = 1;
+                statistics.MostFrequentWords[word] = 1;
             }
         }
     }

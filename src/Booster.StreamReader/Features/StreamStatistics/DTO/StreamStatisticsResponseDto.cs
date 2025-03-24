@@ -1,4 +1,4 @@
-﻿namespace Booster.StreamReader.API.Features.StreamStatistics.DTO;
+﻿namespace Booster.StreamReader.Features.StreamStatistics.DTO;
 
 /// <summary>
 /// Represents the response DTO for stream statistics.
@@ -28,7 +28,7 @@ public record StreamStatisticsResponseDto
     /// <summary>
     /// Gets or sets the dictionary of the 10 most frequently appearing words in the stream.
     /// </summary>
-    public Dictionary<string, int> WordFrequency { get; set; } = [];
+    public Dictionary<string, int> MostFrequentWords { get; set; } = [];
 
     /// <summary>
     /// Gets or sets the dictionary of all characters appearing in the stream and their frequencies.

@@ -1,7 +1,7 @@
-﻿using Booster.StreamReader.API.Features.StreamStatistics.Services;
+﻿using Booster.StreamReader.Features.StreamStatistics.Services;
 using NLipsum.Core;
 
-namespace Booster.StreamReader.API.Core.Services
+namespace Booster.StreamReader.Core.Services
 {
     public class BoosterStreamReaderService(ILogger<BoosterStreamReaderService> logger,
         IServiceProvider provider) : BackgroundService
