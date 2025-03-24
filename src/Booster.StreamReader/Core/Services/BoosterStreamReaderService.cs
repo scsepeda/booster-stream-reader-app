@@ -11,7 +11,8 @@ namespace Booster.StreamReader.API.Core.Services
             logger.LogInformation("BoosterStreamReaderService is starting..");
             using var scope = provider.CreateScope();
             var service = scope.ServiceProvider.GetRequiredService<IStreamProcessingService>();
-            var result = await service.ProcessStream(new LipsumGenerator().GenerateLipsum(99), cancellationToken);
+            var num = new Random().Next(0, 99);
+            var result = await service.ProcessStream(new LipsumGenerator().GenerateLipsum(num), cancellationToken);
             logger.LogInformation("--------------------------------------------------");
             logger.LogInformation("{@Result}", result);
             logger.LogInformation("BoosterStreamReaderService has ended.");
