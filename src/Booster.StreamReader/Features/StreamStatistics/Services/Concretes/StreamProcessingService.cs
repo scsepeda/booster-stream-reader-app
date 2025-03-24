@@ -1,19 +1,24 @@
 ﻿using System.Text;
-using Booster.StreamReader.API.Core.Services;
-using Booster.StreamReader.API.Features.StreamStatistics.DTO;
+using Booster.StreamReader.Core.Services;
+using Booster.StreamReader.Features.StreamStatistics.DTO;
 
-namespace Booster.StreamReader.API.Features.StreamStatistics.Services.Concretes
+namespace Booster.StreamReader.Features.StreamStatistics.Services.Concretes
 {
-    public class StreamProcessingService(ILogger<BoosterStreamReaderService> logger) : IStreamProcessingService
+    public class StreamProcessingService : IStreamProcessingService
     {
+        private readonly ILogger<BoosterStreamReaderService> _logger;
+        public StreamProcessingService(ILogger<BoosterStreamReaderService> logger)
+        {
+            _logger = logger;
+        }
+
         public async Task<StreamStatisticsResponseDto> ProcessStream(string inputString, CancellationToken cancellationToken)
         {
 
             var statistics = new StreamStatisticsResponseDto();
             try
             {
-                //var memoryStream = new MemoryStream(new WordStream());
-
+                //using var stream = new System.IO.StreamReader(new WordStream());
                 using var stream = new System.IO.StreamReader(GenerateStreamFromString(inputString));
                 string? line;
                 while ((line = stream.ReadLine()) != null)
@@ -22,8 +27,8 @@ namespace Booster.StreamReader.API.Features.StreamStatistics.Services.Concretes
                 }
 
                 // Sort and get distinct values
-                statistics.LargestWords = [.. statistics.LargestWords.Distinct().OrderByDescending(w => w.Length).Take(5)];
-                statistics.SmallestWords = [.. statistics.SmallestWords.Distinct().OrderBy(w => w.Length).Take(5)];
+                statistics.LargestWords = statistics.LargestWords.Distinct().OrderByDescending(w => w.Length).Take(5).ToList();
+                statistics.SmallestWords = statistics.SmallestWords.Distinct().OrderBy(w => w.Length).Take(5).ToList();
                 statistics.WordFrequency = statistics.WordFrequency.OrderByDescending(w => w.Value).Take(10).ToDictionary(w => w.Key, w => w.Value);
                 statistics.CharacterFrequency = statistics.CharacterFrequency.OrderByDescending(c => c.Value).ToDictionary(c => c.Key, c => c.Value);
 
@@ -31,7 +36,7 @@ namespace Booster.StreamReader.API.Features.StreamStatistics.Services.Concretes
             }
             catch (Exception ex)
             {
-                logger.LogError(ex.Message);
+                _logger.LogError(ex.Message);
                 return new StreamStatisticsResponseDto();
             }
         }

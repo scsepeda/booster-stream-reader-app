@@ -1,7 +1,7 @@
-﻿using Booster.StreamReader.API.Features.StreamStatistics.Services;
-using Booster.StreamReader.API.Features.StreamStatistics.Services.Concretes;
+﻿using Booster.StreamReader.Features.StreamStatistics.Services;
+using Booster.StreamReader.Features.StreamStatistics.Services.Concretes;
 
-namespace Booster.StreamReader.API.Infrastructure.Extensions;
+namespace Booster.StreamReader.Infrastructure.Extensions;
 
 public static class ServiceCollectionExtension
 {
