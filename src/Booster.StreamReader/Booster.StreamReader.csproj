@@ -15,6 +15,7 @@
     <PackageReference Include="MediatR" Version="12.4.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.3" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.3" />
+    <PackageReference Include="NLipsum" Version="1.1.0" />
     <PackageReference Include="Serilog" Version="4.2.0" />
     <PackageReference Include="Serilog.AspNetCore" Version="9.0.0" />
     <PackageReference Include="Serilog.Extensions.Hosting" Version="9.0.0" />
@@ -26,10 +27,6 @@
   <ItemGroup>
     <Reference Include="Booster.CodingTest.Library">
       <HintPath>bin\Booster.CodingTest.Library.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="NLipsum.Core">
-      <HintPath>bin\NLipsum.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>

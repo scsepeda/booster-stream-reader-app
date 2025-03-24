@@ -12,8 +12,7 @@ namespace Booster.StreamReader.API.Features.StreamStatistics.Services.Concretes
             var statistics = new StreamStatisticsResponseDto();
             try
             {
-                //var memoryStream = new MemoryStream(new WordStream());
-
+                //using var stream = new System.IO.StreamReader(new WordStream());
                 using var stream = new System.IO.StreamReader(GenerateStreamFromString(inputString));
                 string? line;
                 while ((line = stream.ReadLine()) != null)
