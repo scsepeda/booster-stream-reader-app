@@ -1,7 +1,7 @@
 # Sepeda 2025 Booster Development Test - README
 
 ## Overview
-This application processes text from a provided stream in real-time and outputs various statistics and analyses on the text. It was developed as part of the Booster Development Test to demonstrate technical proficiency and the approach to solving problems using .NET technologies.
+This application processes text from a provided stream in real-time and outputs various statistics and analyses on the text.
 
 ## Features
 The application reads and processes text from a stream, performing the following tasks:
